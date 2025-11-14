@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  finmax-bot:
+    build: .
+    container_name: finmax-bot
+    restart: unless-stopped
+
+
+    volumes:
+      - ./data:/app/data
+
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
